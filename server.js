@@ -8,9 +8,10 @@ app.get('/', function (req, res) {
   res.send("oi");
 });
 
-app.get("/image/:imglink", function(req, res) {
+app.get("/image", function(req, res) {
+  console.log(req.query.imglink);
     var requestSettings = {
-        url: req.params.imglink,
+        url: req.query.imglink,
         method: 'GET',
         encoding: null
     };
